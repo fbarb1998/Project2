@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+*{
+  font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
+    color: black;
+}
 
 body {
   margin: 0;
-  padding: 0 3%;
-  font-family: "Raleway";
+  padding: 0;
 }
 
 .footer{
@@ -29,9 +33,9 @@ h3{font-size: 16px;
 
 h2,h1{font-size: 22px;}
 
-.img{
-  overflow-clip-margin: content-box;
-  overflow: clip;
+.img {
+  width: 100%;
+  height: 100%;
 }
 
 header {
@@ -39,11 +43,12 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 20px;
 }
 
-.logo{
+.logo {
   height: 70px;
-  padding-top: 30px;
+  margin-right: auto;
 }
 
 .navbar{
@@ -53,24 +58,24 @@ header {
 
 .navlink{
   padding: 30px;
-  border-top: solid 2px transparent;
+  border-top: solid 4px transparent;
 }
 
 .navlink:hover{
   border-top-color: #0065fc;
   color: #0065fc;
+  text-decoration: none;
 }
 
 .header-search{
-  margin: 0 50px;
   width: 100%;
-  padding: 5 3%;
 }
 
 .search{
   display: flex;
   margin: 0 50px;
   padding-top: 30px;
+  padding: 20px 0 20px 0;
 }
 
 .search-location{
@@ -99,12 +104,18 @@ header {
   display: none;
 }
 
+.form {
+  display: flex;
+  margin-bottom: 10px;
+}
+
 .filters_container {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 1rem;
   margin: 0 50px;
-  padding-top: 30px
+  padding-top: 30px;
+  gap: 20px;
 }
 
 .filter-button {
@@ -149,28 +160,24 @@ header {
   color: #d9d9d9;
 }
 
-.i {
-  font-weight: lighter;
-  grid-template-columns: 50px 1fr;
-}
 
 .info{
   display: flex;
   align-items: center;
   gap: 10px;;
-  padding: 50px 50px;
+  padding: 20px 0 20px 0;
+  margin: 50px;
 }
 
 .info-icon{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 22px;
-  width: 22px;
-  color: #0065fc;
-  border: solid 2px #f2f2f2;
-  border-radius: 50%;
-  margin: 0 10px 0 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  border: 2px solid #F2F2F2;
+  color: #0065FC;
+  padding-top: 3px;
+  justify-items: center;
+  text-align: center;
 }
 
 .popular_accomodation_container {
@@ -449,6 +456,13 @@ div .activity-single-5-6 {
 .footer-link:hover{
   color: #0065fc;
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .activity {
+    margin: 0px;
+  }
+}
+
 @media (max-width: 992px) {
   header {
     width: 100%;
@@ -514,9 +528,9 @@ div .activity-single-5-6 {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
-  header {
+  .header {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -528,7 +542,9 @@ div .activity-single-5-6 {
 
     .logo {
       margin-right: auto;
-      height: 70px;}
+      height: 70px;
+      align-self: center;
+    }
 
     .navlink {
     color: #0065fc;
@@ -548,10 +564,6 @@ div .activity-single-5-6 {
     width: 100%;
     border-bottom: 4px solid #f2f2f2;
     text-align: center;
-  }
-
-  .navbar {
-    width: 100%;
   }
 
   .filters_container {
@@ -599,35 +611,38 @@ div .activity-single-5-6 {
     margin: 1rem 6vw;
   }
 
-  .activity {
-    justify-content: center;
-    margin: 0;
-  }
-  .activity_title {
-    margin: 2rem 5vw 1rem 5vw;
-  }
-  .activity_card img {
-    width: 100%;
-    height: 120px;
-  }
-  .activity_card {
-    min-width: 200px;
-    flex: 100%;
-    border-radius: 20px 20px;
-    max-height: 180px white;
-    border-radius: 20px 20px;
-    box-shadow: 2px 2px 2px lightgray;
-    margin: 1rem 2vw;
-  }
-  .activity-single-2-3,
-  .activity-single-5-6 {
-    margin: 0px;
-    justify-content: space-around;
-    max-height: 425px;
-  }
-
-  .activity_card .caption {
-    height: 50px;
+  @media (max-width: 768px) {
+    .activity {
+      justify-content: center;
+      margin: 0;
+    }
+    .activity_title {
+      margin: 2rem 5vw 1rem 5vw;
+    }
+    .activity_card img {
+      width: 100%;
+      height: 120px;
+    }
+    .activity_card {
+      min-width: 200px;
+      flex: 100%;
+      border-radius: 20px 20px;
+      max-height: 180px;
+      background-color: #f2f2f2;
+      border-radius: 20px 20px;
+      box-shadow: 2px 2px 2px lightgray;
+      margin: 1rem 2vw;
+    }
+    .activity-single-2-3,
+    .activity-single-5-6 {
+      margin: 0px;
+      justify-content: space-around;
+      max-height: 425px;
+    }
+  
+    .activity_card .caption {
+      height: 50px;
+    }
   }
 
   .footer {
